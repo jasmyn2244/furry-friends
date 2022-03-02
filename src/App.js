@@ -1,25 +1,34 @@
-import logo from './logo.svg';
 import './App.css';
+import React, { Component } from 'react';
+import { Route, Switch } from 'react-router-dom';
+import HomePage from './components/HomePage'
+import FavoritesPage from './components/FavoritesPage'
+import ErrorPage from './components/ErrorPage'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+class App extends Component {
+  constructor() {
+    super()
+    this.state = {
+      allPhotos: [],
+      greyScale: [],
+      sizeFiltered: [],
+      error: null,
+    }
+  }
+
+  render() {
+    return (
+      <>
+       s */}
+        <Switch>
+          <Route path='/' render={() => <HomePage />} />
+          <Route path='/favorites' render={() => <FavoritesPage />} />
+          <Route path='*' render={() => <ErrorPage />} />
+        </Switch>
+      </>
+    );
+  }
 }
 
 export default App;
