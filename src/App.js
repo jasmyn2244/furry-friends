@@ -1,9 +1,9 @@
 import './App.css';
 import React, { Component } from 'react';
 import { Route, Switch } from 'react-router-dom';
-import HomePage from './components/HomePage'
-import FavoritesPage from './components/FavoritesPage'
-import ErrorPage from './components/ErrorPage'
+import HomePage from './components/home/HomePage'
+import FavoritesPage from './components/favorites/FavoritesPage'
+import ErrorPage from './components/error/ErrorPage'
 import { getRandomDog } from './api-calls';
 
 
