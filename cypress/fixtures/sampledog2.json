@@ -1,0 +1,27 @@
+[
+  {
+    "breeds": [
+      {
+        "weight": {
+          "imperial": "30 - 45",
+          "metric": "14 - 20"
+        },
+        "height": {
+          "imperial": "18 - 22",
+          "metric": "46 - 56"
+        },
+        "id": 50,
+        "name": "Border Collie",
+        "bred_for": "Sheep herder",
+        "breed_group": "Herding",
+        "life_span": "12 - 16 years",
+        "temperament": "Tenacious, Keen, Energetic, Responsive, Alert, Intelligent",
+        "reference_image_id": "sGQvQUpsp"
+      }
+    ],
+    "id": "oCwM2h4LD",
+    "url": "https://cdn2.thedogapi.com/images/oCwM2h4LD.jpg",
+    "width": 1080,
+    "height": 1080
+  }
+]

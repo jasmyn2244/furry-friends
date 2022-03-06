@@ -1,0 +1,27 @@
+[
+  {
+    "breeds": [
+      {
+        "weight": {
+          "imperial": "40 - 60",
+          "metric": "18 - 27"
+        },
+        "height": {
+          "imperial": "18 - 22",
+          "metric": "46 - 56"
+        },
+        "id": 129,
+        "name": "Harrier",
+        "bred_for": "Hunting hares by trailing them",
+        "breed_group": "Hound",
+        "life_span": "12 - 15 years",
+        "temperament": "Outgoing, Friendly, Cheerful, Sweet-Tempered, Tolerant, Active",
+        "reference_image_id": "B1IcfgqE7"
+      }
+    ],
+    "id": "B1IcfgqE7",
+    "url": "https://cdn2.thedogapi.com/images/B1IcfgqE7_1280.jpg",
+    "width": 1920,
+    "height": 1080
+  }
+]
