@@ -4,6 +4,7 @@ import { Route, Switch } from 'react-router-dom';
 import HomePage from './components/HomePage'
 import FavoritesPage from './components/FavoritesPage'
 import ErrorPage from './components/ErrorPage'
+import { getRandomDog } from './api-calls';
 
 
 class App extends Component {
@@ -11,25 +12,28 @@ class App extends Component {
     super()
     this.state = {
       dog: {},
-      favorites: []
+      favorites: [],
+      error: ""
     }
   }
 
   componentDidMount() {
-    fetch('https://api.thedogapi.com/v1/images/search')
-      .then(response => response.json())
+    getRandomDog()
       .then(data => this.setState({ dog: data[0] }))
+      .catch(error => {
+        this.setState({ error: error })
+      })
   }
 
   getNewDog = () => {
-    fetch('https://api.thedogapi.com/v1/images/search')
-      .then(response => response.json())
+    getRandomDog()
       .then(data => this.setState({ dog: data[0] }))
+      .catch(error => {
+        this.setState({ error: error })
+      })
   }
 
   addToFavorites = () => {
-    console.log("Does this method work?")
-    //let dog = this.state.dog
     if (!this.state.favorites.includes(this.state.dog)) {
       this.setState({ favorites: [...this.state.favorites, this.state.dog] })
     }
@@ -54,16 +58,20 @@ class App extends Component {
 
 
   render() {
-    return (
-      <>
-        {console.log("favorites array", this.state.favorites)}
-        <Switch>
-          <Route exact path='/' render={() => <HomePage dog={this.state.dog} addToFavorites={this.addToFavorites} getNewDog={this.getNewDog} />} />
-          <Route path='/favorites' render={() => <FavoritesPage favorites={this.state.favorites} />} />
-          <Route path='*' render={() => <ErrorPage />} />
-        </Switch>
-      </>
-    );
+    if (this.state.error) {
+      return <ErrorPage />
+    }
+    else {
+      return (
+        <>
+          <Switch>
+            <Route exact path='/' render={() => <HomePage dog={this.state.dog} addToFavorites={this.addToFavorites} getNewDog={this.getNewDog} />} />
+            <Route path='/favorites' render={() => <FavoritesPage favorites={this.state.favorites} />} />
+            <Route path='*' render={() => <ErrorPage />} />
+          </Switch>
+        </>
+      );
+    }
   }
 }
 

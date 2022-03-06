@@ -1,0 +1,27 @@
+.oops-text {
+  font-size: 5vw;
+  color: azure;
+}
+
+.oops-dog {
+  max-height: 65vh;
+  max-width: 75vw;
+  margin: auto;
+  display: block;
+  border-radius: 3%;
+}
+
+.error-container {
+  text-align: center;
+}
+
+.error-home-button {
+  width: 20vw;
+  align-self: center;
+  background-color: azure;
+  font-family: 'Amatic SC', cursive;
+  border: none;
+  border-radius: 3%;
+  font-size: 4vw;
+  margin-bottom: 2%;
+}

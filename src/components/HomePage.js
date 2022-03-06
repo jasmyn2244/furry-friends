@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 import './HomePage.css';
 import { Link } from 'react-router-dom';
+//import paw from '../assets/veterinary.png'
+import heart from '../assets/icons8-dog-paw-print-48.png'
+import arrow from '../assets/next.png'
 
 class HomePage extends Component {
   constructor() {
@@ -10,54 +13,26 @@ class HomePage extends Component {
     }
   }
 
-  // componentDidMount() {
-  //   fetch('https://api.thedogapi.com/v1/images/search')
-  //     .then(response => response.json())
-  //     .then(data => this.setState({ dog: data[0] }))
-  // }
-
-  // componentDidMount() {
-  //   return fetch('https://fe-cors-proxy.herokuapp.com', {
-  //     headers: {
-  //       "Target-URL": "https://picsum.photos/v2/list",
-  //       "Accept": "application/json"
-  //     }
-  //   })
-  //     .then(response => response.json())
-  //     .then(data => this.setState({ allPhotos: data }))
-  // }
-
-  // makeCards() {
-  //   return this.state.photos.map(photo => {
-  //     console.log('photo in map', photo)
-  //     return (
-  //       < PhotoCard
-  //         key={photo.id}
-  //         photo={photo}
-  //       // key="photo.id"
-  //       // id="photo.id"
-  //       // url="photo.url"
-  //       // download_url="photo.download_url"
-  //       // height="photo.hight"
-  //       // width="photo.width"
-  //       // author="photo.author"
-  //       />
-  //     )
-  //   })
-  // }
-
   render() {
-    console.log("props", this.props)
     return (
       <>
-        <h1>Furry Friends</h1>
-        <Link to="/favorites">
-          <button>Favorites</button>
-        </Link>
-        <img src={this.props.dog.url} />
-        <button type='submit' onClick={() => this.props.getNewDog()} >Next</button>
-        <button onClick={() => this.props.addToFavorites()}>❤️</button>
-        <button>Doggy Deets</button>
+        <div className="header">
+          <div>
+            <h1 className="home-page-title">Furry Friends</h1>
+            {/* <img className="dogpaw" src={paw} alt="dog paw"></img> */}
+          </div>
+          <Link to="/favorites">
+            <button className="favorites-button">Favorites</button>
+          </Link>
+        </div>
+        <img className="home-page-pic" src={this.props.dog.url} />
+        <div className='lower-buttons'>
+          <a>
+            <img className="fav-icon" src={heart} alt="paw print heart" onClick={() => this.props.addToFavorites()} />
+          </a>
+          <img className="arrow" src={arrow} alt="Right arrow" onClick={() => this.props.getNewDog()}></img>
+          {/* <button>Doggy Deets</button> */}
+        </div>
       </>
     )
   }

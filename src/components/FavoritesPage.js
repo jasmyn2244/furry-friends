@@ -1,6 +1,7 @@
 import React from 'react';
 import './FavoritesPage.css'
 import FavCard from './FavCard'
+import { Link } from 'react-router-dom';
 
 function FavoritesPage({ favorites }) {
 
@@ -16,8 +17,15 @@ function FavoritesPage({ favorites }) {
 
   return (
     <>
-      <h1>Here are all the fovorites</h1>
-      {favCards}
+      <div className="fav-header">
+        <h1 className="fav-title">Favorites</h1>
+        <Link to="/">
+          <button className="home-button">Home</button>
+        </Link>
+      </div>
+      <section className="fav-container">
+        {favCards}
+      </section>
     </>
   )
 }
