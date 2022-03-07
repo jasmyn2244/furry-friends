@@ -11,7 +11,7 @@
 - A user can visit the furry friends home page and click through randomly generated pictures of dogs
 - Users can favorite and collect the cutest doggos and view the collection on the favorites page
 
-![HomePage](https://media.giphy.com/media/MgVOwBTakBUPhoGGCO/giphy.gif)
+![HomePage](https://media.giphy.com/media/xoO9AlTlNd61g6Hg9x/giphy.gif)
 
 ![ResponsiveDesign](https://media.giphy.com/media/QRnnAxcHfpNUyTa3T4/giphy.gif)
 
@@ -39,7 +39,7 @@ To run the app on your computer locally:
 - run ```npm install``` in your terminal
 - run ```npm start``` in the Terminal visit localhost:3000
 
-Use the deploy link:
+To use the deploy link:
 [Furry Friends](https://blooming-reef-21079.herokuapp.com/) on Heroku
 
 ## FUTURE FEATURES
@@ -47,10 +47,10 @@ Use the deploy link:
 -Would love to play with media queries and responsive design to have the mobile version be cats, or only very small dogs
 
 
-#### - Project
-- [Project Board]()
+## Project Specs
+- [Project Guide and Rubric](https://frontend.turing.edu/projects/module-3/showcase.html)
 
-#### - AUTHORS:
+## AUTHORS:
 - Jasmyn Hicks = [LinkedIn](https://www.linkedin.com/in/jasmyn-hicks) || [GitHub](https://github.com/jasmyn2244)
 
 ## [BACK TO THE TOP!](#furry-friends)
