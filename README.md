@@ -7,7 +7,7 @@
 - [Future Features](#future-features)
 - [Authors/Links](#authorslinks)
 
-## ABSTRACT (WHAT, HOW, WHY)
+## ABSTRACT
 - A user can visit the furry friends home page and click through randomly generated pictures of dogs
 - Users can favorite and collect the cutest doggos and view the collection on the favorites page
 
