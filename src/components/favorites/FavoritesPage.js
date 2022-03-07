@@ -2,18 +2,23 @@ import React from 'react';
 import './FavoritesPage.css'
 import FavCard from './FavCard'
 import { Link } from 'react-router-dom';
+import PropTypes, { arrayOf } from 'prop-types'
+
 
 function FavoritesPage({ favorites }) {
 
-  const favCards =
-    favorites.map(dog => {
-      return (
-        <FavCard
-          key={dog.id}
-          dog={dog}
-        />
-      )
-    })
+  let uniqueNum = 0
+
+  const favCards = favorites.map(fav => {
+    console.log("fav", fav)
+    uniqueNum++
+    return (
+      <FavCard
+        key={uniqueNum}
+        dog={fav}
+      />
+    )
+  })
 
   return (
     <>
@@ -31,3 +36,7 @@ function FavoritesPage({ favorites }) {
 }
 
 export default FavoritesPage
+
+FavoritesPage.propTypes = {
+  favorites: arrayOf(PropTypes.string)
+}

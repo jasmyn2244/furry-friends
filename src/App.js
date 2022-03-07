@@ -11,7 +11,7 @@ class App extends Component {
   constructor() {
     super()
     this.state = {
-      dog: {},
+      dog: '',
       favorites: [],
       error: ""
     }
@@ -19,7 +19,10 @@ class App extends Component {
 
   componentDidMount() {
     getRandomDog()
-      .then(data => this.setState({ dog: data[0] }))
+      .then(cleanData => {
+        console.log('cleandata in app', cleanData)
+        this.setState({ dog: cleanData })
+      })
       .catch(error => {
         this.setState({ error: error })
       })
@@ -27,7 +30,7 @@ class App extends Component {
 
   getNewDog = () => {
     getRandomDog()
-      .then(data => this.setState({ dog: data[0] }))
+      .then(cleanData => this.setState({ dog: cleanData }))
       .catch(error => {
         this.setState({ error: error })
       })
@@ -58,6 +61,7 @@ class App extends Component {
 
 
   render() {
+    console.log('state in app', this.state.dog)
     if (this.state.error) {
       return <ErrorPage />
     }
