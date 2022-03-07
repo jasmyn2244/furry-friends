@@ -1,6 +1,6 @@
 describe('User will be directed to error page', () => {
 
-  it('Shoulde be able to take user to error page if url path is incorrect', () => {
+  it('Shoulde be able to handle a 404 error', () => {
     cy.intercept('GET', 'https://api.thedogapi.com/v1/images/search', { statusCode: 404 })
 
     cy.visit('http://localhost:3000')
@@ -18,5 +18,16 @@ describe('User will be directed to error page', () => {
     //Why didn't the click do anything. Stayed on the error page, even though when I use my app in the browser, the button works exactly as it should
     // cy.get('.home-page-title')
     //   .contains('Furry Friends')
+  })
+
+  it('Should be ale to direct a user to the error page if url is wrong', () => {
+
+    cy.intercept('GET', 'https://api.thedogapi.com/v1/images/search', { fixture: 'sampledog.json' })
+    cy.visit('http://localhost:3000')
+
+    cy.visit('http://localhost:3000/imlost')
+    cy.get('.oops-text')
+      .contains('Oops something went wrong. Please try again')
+
   })
 })
