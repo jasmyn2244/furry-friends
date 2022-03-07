@@ -20,7 +20,6 @@ class App extends Component {
   componentDidMount() {
     getRandomDog()
       .then(cleanData => {
-        console.log('cleandata in app', cleanData)
         this.setState({ dog: cleanData })
       })
       .catch(error => {
@@ -42,26 +41,7 @@ class App extends Component {
     }
   }
 
-  // componentDidMount() {
-  //   fetch('https://picsum.photos/v2/list')
-  //     .then(response => response.json())
-  //     .then(data => this.setState({ allPhotos: data }))
-  // }
-
-  // componentDidMount() {
-  //   return fetch('https://fe-cors-proxy.herokuapp.com', {
-  //     headers: {
-  //       "Target-URL": "https://picsum.photos/v2/list",
-  //       "Accept": "application/json"
-  //     }
-  //   })
-  //     .then(response => response.json())
-  //     .then(data => this.setState({ allPhotos: data }))
-  // }
-
-
   render() {
-    console.log('state in app', this.state.dog)
     if (this.state.error) {
       return <ErrorPage />
     }

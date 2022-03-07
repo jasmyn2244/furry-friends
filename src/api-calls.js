@@ -12,8 +12,3 @@ const checkForError = (response) => {
   }
   return response.json()
 }
-
-// const cleanData = (data) => {
-//   console.log('data in clean function', data)
-//   return data[0].url
-// }

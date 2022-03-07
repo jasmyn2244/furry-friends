@@ -10,7 +10,6 @@ function FavoritesPage({ favorites }) {
   let uniqueNum = 0
 
   const favCards = favorites.map(fav => {
-    console.log("fav", fav)
     uniqueNum++
     return (
       <FavCard
