@@ -1,3 +1,5 @@
+import cleanData from './utilities'
+
 export const getRandomDog = () => {
   return fetch('https://api.thedogapi.com/v1/images/search')
     .then(response => checkForError(response))
@@ -11,7 +13,7 @@ const checkForError = (response) => {
   return response.json()
 }
 
-const cleanData = (data) => {
-  console.log('data in clean function', data)
-  return data[0].url
-}
+// const cleanData = (data) => {
+//   console.log('data in clean function', data)
+//   return data[0].url
+// }
