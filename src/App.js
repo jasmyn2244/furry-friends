@@ -11,7 +11,7 @@ class App extends Component {
   constructor() {
     super()
     this.state = {
-      dog: {},
+      dog: '',
       favorites: [],
       error: ""
     }
@@ -19,7 +19,9 @@ class App extends Component {
 
   componentDidMount() {
     getRandomDog()
-      .then(data => this.setState({ dog: data[0] }))
+      .then(cleanData => {
+        this.setState({ dog: cleanData })
+      })
       .catch(error => {
         this.setState({ error: error })
       })
@@ -27,7 +29,7 @@ class App extends Component {
 
   getNewDog = () => {
     getRandomDog()
-      .then(data => this.setState({ dog: data[0] }))
+      .then(cleanData => this.setState({ dog: cleanData }))
       .catch(error => {
         this.setState({ error: error })
       })
@@ -38,24 +40,6 @@ class App extends Component {
       this.setState({ favorites: [...this.state.favorites, this.state.dog] })
     }
   }
-
-  // componentDidMount() {
-  //   fetch('https://picsum.photos/v2/list')
-  //     .then(response => response.json())
-  //     .then(data => this.setState({ allPhotos: data }))
-  // }
-
-  // componentDidMount() {
-  //   return fetch('https://fe-cors-proxy.herokuapp.com', {
-  //     headers: {
-  //       "Target-URL": "https://picsum.photos/v2/list",
-  //       "Accept": "application/json"
-  //     }
-  //   })
-  //     .then(response => response.json())
-  //     .then(data => this.setState({ allPhotos: data }))
-  // }
-
 
   render() {
     if (this.state.error) {

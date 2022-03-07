@@ -25,3 +25,8 @@
   font-size: 4vw;
   margin-bottom: 2%;
 }
+
+.error-home-button:hover {
+  cursor:pointer;
+  transform: scale(1.2);
+}

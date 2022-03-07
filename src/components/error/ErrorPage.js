@@ -6,7 +6,7 @@ function ErrorPage() {
   return (
     <>
       <div className="error-container">
-        <h2 className="oops-text">Opps something went wrong. <br /> Please try again </h2>
+        <h2 className="oops-text">Oops something went wrong. <br /> Please try again </h2>
         <Link to="/">
           <button className="error-home-button">Home</button>
         </Link>
